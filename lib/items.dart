@@ -24,7 +24,7 @@ class _ItemsPageState extends State<ItemsPage> {
               Icons.arrow_back_ios,
               color: Colors.black,
             ),
-            onPressed: () {},
+            onPressed: () {Navigator.pop(context);},
           ),
         ),
         body: Padding(
@@ -61,6 +61,7 @@ class _ItemsPageState extends State<ItemsPage> {
                   ]),
                 );
               }),
-        ));
+        )
+        );
   }
 }

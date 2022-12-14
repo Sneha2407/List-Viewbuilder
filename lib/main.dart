@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const ItemsPage(),
+      home: const OrdersPage(),
     );
   }
 }
@@ -165,6 +165,41 @@ class _OrdersPageState extends State<OrdersPage> {
               );
             }),
       ),
+    bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              label: 'Home',
+              icon: Icon(Icons.home),
+              
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.production_quantity_limits_rounded),
+              //title: Text('Business'),
+               label: 'Items',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+             // title: Text('School'),
+              label: 'Profile',
+            ),
+          ],
+          currentIndex: 2,
+          selectedItemColor: Colors.amber[800],
+          onTap: (index) {
+            if (index == 1) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ItemsPage()),
+              );
+            }
+            // if (index == 2) {
+            //   Navigator.push(
+            //     context,
+            //     MaterialPageRoute(builder: (context) => const ProfilePage()),
+            //   );
+            // }
+          },
+    )
     );
   }
 }
